@@ -5,7 +5,7 @@ You can prepare for HackerEarth :relaxed: competition here, held online!:heart_e
 To register for  HEC competition, held once in two weeks, create an issue ! :ok_hand: <br>
 Also, feel free to make pull requests to help each other learn more :thumbsup::thumbsup:<br><br>
 
-Join us at Gitter room for regular notifications <br>
+Join the Gitter room for regular notifications : <br>
 https://gitter.im/bvphec/Lobby
 
 
