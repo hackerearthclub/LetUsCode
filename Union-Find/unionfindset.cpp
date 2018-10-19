@@ -20,18 +20,18 @@ int d[MAX];
 
 void initialize(){
 	for(int i = 0 ; i < MAX ; ++i){
-		d[i] = i; //each node points itself
+		d[i] = i;    //each node points itself
 	}
 }
 
-int findset(int x){ 			 // finds which set the node belongs to with path compression
-	if(d[x] == x) return x; 	 // if the node points itself return the node
-	return d[x] = findset(d[x]); // the node will point directly to the representative of the set it belongs
-}								 // path is compressed, as the node directly points to the representative of the set
+int findset(int x){             // finds which set the node belongs to with path compression
+	if(d[x] == x) return x;     // if the node points itself return the node
+	return d[x] = findset(d[x]);// the node will point directly to the representative of the set it belongs
+}                               // path is compressed, as the node directly points to the representative of the set
 
-void unionset(int x,int y){ 	   // merges the sets which x and y belong to
+void unionset(int x,int y){        // merges the sets which x and y belong to
 	d[findset(y)] = d[findset(x)]; // the sets will be merged, the representative of the set y belongs to, 
-}								   // is now the representative of the merged set
+}                                  // is now the representative of the merged set
 
 int main(){
 
