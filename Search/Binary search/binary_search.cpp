@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Function for Interative Code for Binary Search Algorithm
 int Binary_Search(int Arr[], int size, int find){
 
 	int L = 0, R = size-1;
@@ -22,6 +23,33 @@ int Binary_Search(int Arr[], int size, int find){
 	
 }
 
+
+// Function for Recursive Code for Binary Search Algorithm
+int Binary_Search_Recursive(int Arr[],int size,int find,int start,int end)
+{
+
+	if(start>end)
+	{
+		return -1;
+	}
+
+	int mid=start+(end-start)/2;
+
+	if(Arr[mid]>find)
+	{
+		return Binary_Search_Recursive(Arr,size,find,start,mid-1);
+	}
+	else if(Arr[mid]<find)
+	{
+		return Binary_Search_Recursive(Arr,size,find,mid+1,end);
+	}
+	else
+	{
+		return mid;
+	}
+}
+
+
 int main(){
 
 
@@ -34,6 +62,20 @@ int main(){
 		cout<<"\n106 found at " <<pos <<" index";
 	
 	pos = Binary_Search(Arr, n, 10);
+	if(pos == -1)
+		cout<<"\n10 not found in array";
+	else
+		cout<<"\n10 found at " <<pos <<" index";
+	
+	cout<<endl;
+
+	pos = Binary_Search_Recursive(Arr, n, 106,0,105);
+	if(pos == -1)
+		cout<<"\n106 not found in array";
+	else
+		cout<<"\n106 found at " <<pos <<" index";
+	
+	pos = Binary_Search_Recursive(Arr, n, 10,0,9);
 	if(pos == -1)
 		cout<<"\n10 not found in array";
 	else
